@@ -1,0 +1,55 @@
+[
+  {
+    "id": "github-student-pack",
+    "category": "tools",
+    "provider": "GitHub",
+    "name": { "zh": "GitHub 学生开发者包", "en": "GitHub Student Developer Pack" },
+    "tag": { "zh": "学生专享", "en": "Students only" },
+    "summary": { "zh": "在校学生可领取的一组开发工具与服务优惠。", "en": "A bundle of developer tool and service offers for enrolled students." },
+    "benefit": { "zh": "通过认证后可使用 GitHub Pro 及合作方提供的免费额度或优惠。", "en": "After verification, get GitHub Pro plus free credits or discounts from partners." },
+    "eligibility": { "zh": "需年满 13 岁，在受认可的教育机构就读，并能提供学籍证明。", "en": "Must be 13 or older, enrolled at a recognized institution, and able to prove student status." },
+    "constraints": {
+      "zh": ["各合作方权益有各自的期限与条款。", "毕业或学籍失效后权益停止续期。"],
+      "en": ["Each partner offer has its own duration and terms.", "Benefits stop renewing once you are no longer a student."]
+    },
+    "cost": { "zh": "申请免费；合作方超出免费额度的部分按其价格计费。", "en": "Free to apply. Usage beyond a partner's free allowance is billed at its prices." },
+    "deadline": { "zh": "学籍有效期间可持续申请；具体合作方权益以其页面为准。", "en": "Available while you remain a student. Partner offers follow their own pages." },
+    "steps": {
+      "zh": ["打开学生包官方页面并登录 GitHub。", "提交学校邮箱或学籍证明，等待审核。", "审核通过后逐个激活需要的合作方权益。"],
+      "en": ["Open the Student Pack page and sign in to GitHub.", "Submit a school email or proof of enrollment and wait for review.", "Once approved, activate the partner offers you need one by one."]
+    },
+    "url": "https://education.github.com/pack",
+    "source": "https://education.github.com/pack",
+    "reviewed": "2026-11-11",
+    "expires": "2027-06-30T23:59:00+08:00",
+    "requiresCard": false,
+    "autoRenew": false,
+    "audience": "student",
+    "regions": ["global"],
+    "verification": { "zh": "示例条目：仅作导入演示，未核验。", "en": "Sample entry for the import demo. Not verified." },
+    "keywords": { "zh": "学生 教育 开发 GitHub Copilot", "en": "student education developer GitHub Copilot" },
+    "verifyMethod": "unverified",
+    "discoveredVia": [
+      { "type": "web", "url": "https://github.blog/news-insights/", "date": "2026-11-11", "note": "导入演示用的内部来源，不会出现在站点上" }
+    ]
+  },
+  {
+    "id": "example-zh-only",
+    "category": "learning",
+    "provider": "示例机构",
+    "name": { "zh": "示例：只有中文的条目" },
+    "tag": { "zh": "演示" },
+    "summary": { "zh": "演示英文缺失时的回退：英文页会显示中文，构建时打印警告。" },
+    "benefit": { "zh": "无实际权益，仅用于演示导入。" },
+    "eligibility": { "zh": "无。" },
+    "constraints": { "zh": ["导入演示后请删除本条。"] },
+    "cost": { "zh": "免费。" },
+    "deadline": { "zh": "2026 年底前删除。" },
+    "steps": { "zh": ["运行导入命令。", "运行构建，查看英文缺失警告。"] },
+    "url": "https://example.com/",
+    "source": "https://example.com/",
+    "reviewed": "2026-11-11",
+    "expires": "2026-12-31",
+    "verification": { "zh": "示例条目，未核验。" }
+  }
+]

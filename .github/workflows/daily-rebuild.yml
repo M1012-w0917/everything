@@ -1,0 +1,46 @@
+# 每天北京时间 00:05 重建并发布到 GitHub Pages，让日期型到期的条目按时下架。
+# 同时在推送到 main 时发布，以便首次部署和后续源码变更生效。
+# 仓库变量 SITE_URL 无法创建（当前令牌没有 Actions variables 权限），因此直接写上项目 Pages 地址。
+name: Daily rebuild
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '5 16 * * *' # UTC 16:05 = 北京时间 00:05
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build.mjs
+        env:
+          SITE_URL: https://m1012-w0917.github.io/everything/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

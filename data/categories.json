@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ai",
+    "sprite": 0,
+    "name": { "zh": "AI 服务", "en": "AI Services" },
+    "description": { "zh": "模型与调用额度，先看免费范围。", "en": "Models and API credits. Check what the free tier covers first." }
+  },
+  {
+    "id": "cloud",
+    "sprite": 1,
+    "name": { "zh": "云与算力", "en": "Cloud & Compute" },
+    "description": { "zh": "给你的项目，找到一处落脚点。", "en": "Somewhere to host and run your project." }
+  },
+  {
+    "id": "tools",
+    "sprite": 2,
+    "name": { "zh": "软件工具", "en": "Software & Tools" },
+    "description": { "zh": "日常工作里，用得上的免费工具。", "en": "Free tools for everyday work." }
+  },
+  {
+    "id": "assets",
+    "sprite": 3,
+    "name": { "zh": "创作素材", "en": "Creative Assets" },
+    "description": { "zh": "为下一次创作，找到合适的素材。", "en": "Fonts, photos and other material for your next piece of work." }
+  },
+  {
+    "id": "learning",
+    "sprite": 4,
+    "name": { "zh": "学习知识", "en": "Learning" },
+    "description": { "zh": "让知识开放，让学习按自己的节奏。", "en": "Open course material you can study at your own pace." }
+  },
+  {
+    "id": "games",
+    "sprite": 5,
+    "name": { "zh": "游戏娱乐", "en": "Games & Play" },
+    "description": { "zh": "收藏一点，工作之外的小快乐。", "en": "A little fun outside of work." }
+  }
+]

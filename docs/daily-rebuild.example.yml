@@ -1,0 +1,45 @@
+# 已启用的工作流：.github/workflows/daily-rebuild.yml
+# 下面保留原始示例。
+# 示例：每天北京时间 00:05 重建并发布到 GitHub Pages，让日期型到期的条目按时下架。
+# 默认不启用。要启用，把本文件移到 .github/workflows/daily-rebuild.yml，
+# 并在仓库 Settings → Pages 里把 Source 设为 "GitHub Actions"。
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: '5 16 * * *' # UTC 16:05 = 北京时间 00:05
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node build.mjs
+        env:
+          SITE_URL: ${{ vars.SITE_URL }} # 仓库变量，如 https://example.com/perk-atlas/；不设时用相对地址
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
